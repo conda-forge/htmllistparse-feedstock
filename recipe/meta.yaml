@@ -1,4 +1,4 @@
-{% set version = "0.5" %}
+{% set version = "0.5.1" %}
 
 package:
   name: htmllistparse
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/htmllistparse/htmllistparse-{{ version }}.tar.gz
-  sha256: 0c88abb09935e242775208cf009448ebd52c99ef993a5a01b664ac3298e7373e
+  sha256: f3d9a41bc88711fa00b02dfda6231e850a61bcc3df2f711a47d728a0aa3fbc1c
 
 build:
   number: 0
