@@ -1,4 +1,4 @@
-{% set version = "0.5" %}
+{% set version = "0.6.0" %}
 
 package:
   name: htmllistparse
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/htmllistparse/htmllistparse-{{ version }}.tar.gz
-  sha256: 0c88abb09935e242775208cf009448ebd52c99ef993a5a01b664ac3298e7373e
+  sha256: 9ac274a165a02bf503656df4b48e1ae9eec0df40723a5f998f9023d3df3c8e32
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - rehttpfs = htmllistparse.rehttpfs:main
 
@@ -35,7 +35,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Python parser for Apache/nginx-style HTML directory listing'
+  summary: Python parser for Apache/nginx-style HTML directory listing
   dev_url: https://github.com/gumblex/htmllisting-parser
 
 extra:
