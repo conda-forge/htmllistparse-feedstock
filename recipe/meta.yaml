@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/htmllistparse/htmllistparse-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/htmllistparse/htmllistparse-{{ version }}.tar.gz
   sha256: 0c88abb09935e242775208cf009448ebd52c99ef993a5a01b664ac3298e7373e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
@@ -17,16 +17,18 @@ build:
 
 requirements:
   host:
-    - python >=3.3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.3
+    - python >={{ python_min }}
     - beautifulsoup4
     - html5lib
     - requests
     - fusepy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - htmllistparse
 
